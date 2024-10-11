@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -7,11 +6,12 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { FiMenu, FiX } from "react-icons/fi"; // Importing mobile icons for open/close
-import Image from "next/image";
-import { Images } from "../../utils/image";
-import { Button } from "../../ui/button";
 import { Loader2 } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi"; // Importing mobile icons for open/close
+import { Button } from "../../ui/button";
+import { Images } from "../../utils/image";
 
 export function MenuBar() {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,7 @@ export function MenuBar() {
   }, []);
 
   return (
-    <header className="w-full flex justify-between items-center px-6 py-8 lg:px-10 lg:py-5 bg-white shadow-md z-50">
+    <header className="w-full flex justify-between items-center px-6 py-8 lg:px-10 lg:py-5 bg-white z-50">
       {/* Logo and Free Advice Button */}
       <div className="flex items-center space-x-4 lg:space-x-8">
         {/* Logo */}
