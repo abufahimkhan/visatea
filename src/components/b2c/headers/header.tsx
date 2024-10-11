@@ -16,32 +16,9 @@ import {
 
 export function Header() {
   return (
-    <header className="flex justify-center items-center px-5 py-2 bg-gray-200">
-      <Menubar>
+    <header className="flex  justify-center items-end px-5 py-5 shadow-2xl text-nowrap">
+      <Menubar className="">
         <MenubarMenu>
-          <MenubarTrigger>Latest News & Updates</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              New Window <MenubarShortcut>⌘N</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem disabled>New Incognito Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Email link</MenubarItem>
-                <MenubarItem>Messages</MenubarItem>
-                <MenubarItem>Notes</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print... <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
           <MenubarTrigger>Contact Us</MenubarTrigger>
           <MenubarContent>
             <MenubarItem>

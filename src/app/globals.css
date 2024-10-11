@@ -76,3 +76,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.slider-container {
+  width: 100%;
+  height: auto;
+  max-width: 1600px; /* Adjust max-width to your design */
+  margin: 0 auto; /* Center the slider */
+}
+
+.banner-wrapper {
+  width: 100%;
+  height: 500px; /* Ensure the height is consistent */
+}
+
+@media (max-width: 768px) {
+  .banner-wrapper {
+    height: 250px; /* Adjust height for smaller devices */
+  }
+}

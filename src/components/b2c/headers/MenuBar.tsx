@@ -1,20 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Menubar,
-  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { FiMenu, FiX } from "react-icons/fi"; // Importing mobile icons for open/close
 import Image from "next/image";
 import { Images } from "../../utils/image";
 import { Button } from "../../ui/button";
@@ -22,6 +15,8 @@ import { Loader2 } from "lucide-react";
 
 export function MenuBar() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenubarFixed, setIsMenubarFixed] = useState(false); // State to track menubar fix
 
   const handleButtonLoading = () => {
     setIsLoading(!isLoading);
@@ -29,125 +24,91 @@ export function MenuBar() {
       setIsLoading(false);
     }, 2000);
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Scroll event listener to toggle menubar fixed
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        // Adjust this value for when the Menubar should become fixed
+        setIsMenubarFixed(true);
+      } else {
+        setIsMenubarFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full flex justify-between items-center px-12 py-5">
-      <div className="flex items-center space-x-8 text-nowrap">
+    <header className="w-full flex justify-between items-center px-6 py-8 lg:px-10 lg:py-5 bg-white shadow-md z-50">
+      {/* Logo and Free Advice Button */}
+      <div className="flex items-center space-x-4 lg:space-x-8">
+        {/* Logo */}
         <Image
           src={Images.logo}
           alt="Logo"
           loading="lazy"
-          className="relative bottom-4 w-36 h-auto "
+          className="relative bottom-4 w-24 lg:w-36 h-auto"
         />
-        <Menubar className="hidden lg:flex px-8 py-6 border-none shadow-none *:text-lg">
+
+        {/* Menubar - Hidden on small devices, visible on larger screens */}
+        <Menubar
+          className={`hidden border-none shadow-none lg:flex py-6 lg:text-lg ${
+            isMenubarFixed
+              ? "fixed top-0 left-1/2 transform -translate-x-1/2 items-center underline justify-center bg-sky-500 py-5 text-white font-bold text-2xl z-50"
+              : ""
+          }`}
+        >
           <MenubarMenu>
             <MenubarTrigger>Study abroad steps</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
-                New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>
-                New Window <MenubarShortcut>⌘N</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem disabled>New Incognito Window</MenubarItem>
-              <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Share</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Email link</MenubarItem>
-                  <MenubarItem>Messages</MenubarItem>
-                  <MenubarItem>Notes</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem>
-                Print... <MenubarShortcut>⌘P</MenubarShortcut>
-              </MenubarItem>
+              <MenubarItem>New Tab</MenubarItem>
+              <MenubarItem>New Window</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
             <MenubarTrigger>Study destinations</MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
-                Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>
-                Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-              </MenubarItem>
-              <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Find</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Search the web</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Find...</MenubarItem>
-                  <MenubarItem>Find Next</MenubarItem>
-                  <MenubarItem>Find Previous</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem>Cut</MenubarItem>
-              <MenubarItem>Copy</MenubarItem>
-              <MenubarItem>Paste</MenubarItem>
+              <MenubarItem>Undo</MenubarItem>
+              <MenubarItem>Redo</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
             <MenubarTrigger>Find a course</MenubarTrigger>
             <MenubarContent>
-              <MenubarCheckboxItem>
-                Always Show Bookmarks Bar
-              </MenubarCheckboxItem>
-              <MenubarCheckboxItem checked>
-                Always Show Full URLs
-              </MenubarCheckboxItem>
-              <MenubarSeparator />
-              <MenubarItem inset>
-                Reload <MenubarShortcut>⌘R</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem disabled inset>
-                Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-              </MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Toggle Fullscreen</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Hide Sidebar</MenubarItem>
+              <MenubarItem>Reload</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
             <MenubarTrigger>IELTS</MenubarTrigger>
             <MenubarContent>
-              <MenubarRadioGroup value="benoit">
-                <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-              </MenubarRadioGroup>
-              <MenubarSeparator />
-              <MenubarItem inset>Edit...</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Add Profile...</MenubarItem>
+              <MenubarItem>Edit...</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
             <MenubarTrigger>Student Essentials</MenubarTrigger>
             <MenubarContent>
-              <MenubarRadioGroup value="benoit">
-                <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-              </MenubarRadioGroup>
-              <MenubarSeparator />
-              <MenubarItem inset>Edit...</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Add Profile...</MenubarItem>
+              <MenubarItem>Edit...</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
       </div>
 
-      <div className="w-auto px-12 flex justify-end ">
+      {/* Free Advice Button */}
+      <div className="flex items-center justify-end gap-8">
         <Button
           disabled={isLoading}
           onClick={handleButtonLoading}
-          className="w-auto rounded-full px-12 py-6"
+          className="w-auto bg-sky-500 rounded-full px-6 py-4 text-sm lg:px-12 lg:py-6 lg:text-lg"
         >
           {isLoading ? (
             <>
@@ -158,7 +119,56 @@ export function MenuBar() {
             "Free Advice Session"
           )}
         </Button>
+
+        {/* Mobile Menu Toggle (visible on small devices) */}
+        <button
+          className="lg:hidden text-3xl focus:outline-none"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown - Visible on small devices */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-40 right-8 shadow-2xl w-72 h-64 bg-white p-8 rounded-lg lg:hidden z-50">
+          <Menubar className="flex flex-col space-y-4">
+            <MenubarMenu>
+              <MenubarTrigger>Study abroad steps</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>New Tab</MenubarItem>
+                <MenubarItem>New Window</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Study destinations</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Undo</MenubarItem>
+                <MenubarItem>Redo</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Find a course</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Reload</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>IELTS</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Edit...</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Student Essentials</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>Edit...</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
+        </div>
+      )}
     </header>
   );
 }

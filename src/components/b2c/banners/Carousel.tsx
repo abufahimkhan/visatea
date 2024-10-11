@@ -27,7 +27,7 @@ const Carousel = () => {
             <Image
               src={banner.logo}
               alt="banners"
-              layout="responsive" // Ensures the image is responsive
+              layout="responsive"
               width={1600} // Adjust based on your banner width
               height={600} // Adjust based on your banner height
               objectFit="cover" // Makes the image cover the container, maintaining aspect ratio
