@@ -49,7 +49,7 @@ const Events = () => {
         <Button
           disabled={isLoading}
           onClick={handleSearchToggle}
-          className="flex w-auto rounded-full px-12 py-6"
+          className="flex w-auto rounded-full px-12 py-6 hover:bg-sky-500 "
         >
           {isLoading ? (
             <>

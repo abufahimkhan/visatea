@@ -35,7 +35,7 @@ const RoadMap = () => {
         <Button
           disabled={isLoading}
           onClick={handleSearchToggle}
-          className="w-auto rounded-full px-12 py-4 text-lg font-semibold bg-sky-500 text-white hover:bg-blue-700 transition duration-200"
+          className="w-auto rounded-full px-12 py-4 text-lg font-semibold bg-black text-white hover:bg-sky-500 transition duration-200"
         >
           {isLoading ? (
             <>
