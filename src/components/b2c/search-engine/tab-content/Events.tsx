@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Events = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +27,7 @@ const Events = () => {
     <Card>
       <CardHeader>
         <CardTitle>Events</CardTitle>
-        <CardDescription>Click search when you're done.</CardDescription>
+        <CardDescription>Click search when you&apos;re done</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 ">
         <div className="space-y-1 flex-1">

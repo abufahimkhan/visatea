@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Scholarships = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +26,7 @@ const Scholarships = () => {
     <Card>
       <CardHeader>
         <CardTitle>Scholarships</CardTitle>
-        <CardDescription>Click search when you're done.</CardDescription>
+        <CardDescription>Click search when you&apos;re done.</CardDescription>
       </CardHeader>
       <CardContent className="space-x-2 flex flex-col  space-y-4 md:flex-row md:space-x-4 md:space-y-0 items-center justify-start *:w-full">
         <div className="space-y-1">

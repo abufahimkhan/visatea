@@ -25,7 +25,7 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-            {servicesData.map((service, index) => (
+            {servicesData.map((service) => (
               <Link
                 key={nanoid()}
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"

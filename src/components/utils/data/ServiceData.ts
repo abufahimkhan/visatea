@@ -11,7 +11,7 @@ const servicesData = [
   {
     title: "A rich history",
     description:
-      "55+ years’ of helping students achieve their study abroad dreams.",
+      "55+ years of helping students achieve their study abroad dreams.",
     icon: FiBook,
     color: "#6B7280", // Mild gray
   },
