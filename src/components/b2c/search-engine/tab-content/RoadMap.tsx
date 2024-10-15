@@ -22,11 +22,11 @@ const RoadMap = () => {
   return (
     <Card>
       <CardHeader>
-        <CardDescription className="text-center underline text-sky-500 font-bold text-xl">
+        <CardDescription className="text-center text-black font-bold text-3xl">
           Let us help you with your search
         </CardDescription>
       </CardHeader>
-      <p className="p-9 text-center text-2xl font-bold">
+      <p className="py-5 text-center text-xl font-bold">
         Simply answer these 5 questions to see courses perfectly matched to you.
       </p>
       <CardFooter>
