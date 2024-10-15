@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/select";
 
 import { studyAbroadCountries } from "@/components/utils/data/StudyAbroadCountries";
+import { StudyAbroadCountriesInterface } from "@/components/utils/interfaces/studyAbroadCountriesInterface";
 import { nanoid } from "nanoid";
 
 const DestinationOptions = () => {

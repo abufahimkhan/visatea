@@ -3,7 +3,7 @@ interface PropTypes {
   description: string;
 }
 
-interface StudyAbroadCountriesInterface {
+export interface StudyAbroadCountriesInterface {
   Asia: PropTypes[];
   Europe: PropTypes[];
   NorthAmerica: PropTypes[];

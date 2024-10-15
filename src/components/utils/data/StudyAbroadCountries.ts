@@ -1,3 +1,5 @@
+import { StudyAbroadCountriesInterface } from "../interfaces/studyAbroadCountriesInterface";
+
 export const studyAbroadCountries: StudyAbroadCountriesInterface = {
   Asia: [
     {
