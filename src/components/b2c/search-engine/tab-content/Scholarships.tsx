@@ -28,7 +28,7 @@ const Scholarships = () => {
         <CardTitle>Scholarships</CardTitle>
         <CardDescription>Click search when you&apos;re done.</CardDescription>
       </CardHeader>
-      <CardContent className="space-x-2 flex flex-col  space-y-4 md:flex-row md:space-x-4 md:space-y-0 items-center justify-start *:w-full">
+      <CardContent className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 *:w-full">
         <div className="space-y-1">
           <Label htmlFor="name">Select study level</Label>
           <Input id="course-subject" defaultValue="Pedro Duarte" />

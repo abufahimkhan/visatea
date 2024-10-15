@@ -5,7 +5,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -21,21 +20,20 @@ const RoadMap = () => {
   };
 
   return (
-    <Card className="flex flex-col items-center justify-center text-center py-9 shadow-lg rounded-lg bg-white">
-      <CardHeader className="space-y-4">
-        <CardTitle className="text-2xl font-bold text-gray-900">
+    <Card>
+      <CardHeader>
+        <CardDescription className="text-center underline text-sky-500 font-bold text-xl">
           Let us help you with your search
-        </CardTitle>
-        <CardDescription className="text-gray-600">
-          Simply answer these 5 questions to see courses perfectly matched to
-          you.
         </CardDescription>
       </CardHeader>
-      <CardFooter className="w-full flex justify-center">
+      <p className="p-9 text-center text-2xl font-bold">
+        Simply answer these 5 questions to see courses perfectly matched to you.
+      </p>
+      <CardFooter>
         <Button
           disabled={isLoading}
           onClick={handleSearchToggle}
-          className="w-auto rounded-full px-12 py-4 text-lg font-semibold bg-black text-white hover:bg-sky-500 transition duration-200"
+          className="flex mx-auto rounded-full px-12 py-6 hover:bg-sky-500 "
         >
           {isLoading ? (
             <>

@@ -7,10 +7,13 @@ import Universities from "./tab-content/Universities";
 
 export function SearchEngine() {
   return (
-    <div className="flex flex-col items-center justify-center p-2 ">
+    <div
+      className="flex
+    m-0.5 items-center justify-center "
+    >
       <div className="rounded-2xl p-5 lg:w-[70%] overflow-hidden">
         <Tabs defaultValue="courses" className="lg:min-w-[400px]">
-          <TabsList className="grid grid-cols-5 items-center">
+          <TabsList className="grid grid-cols-3 sm:grid-cols-5 items-center h-15 gap-2 lg:h-auto">
             <TabsTrigger value="courses">Courses</TabsTrigger>
             <TabsTrigger value="scholarships">Scholarships</TabsTrigger>
             <TabsTrigger value="universities">Universities</TabsTrigger>

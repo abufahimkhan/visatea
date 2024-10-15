@@ -49,7 +49,7 @@ export function MenuBar() {
   }, []);
 
   return (
-    <header className="w-full flex justify-between items-center px-6 py-8 lg:px-10 lg:py-5 bg-white z-50">
+    <header className="w-full flex flex-wrap justify-between items-center px-6 py-8 lg:px-10 lg:py-5 bg-white z-50">
       {/* Logo and Free Advice Button */}
       <div className="flex items-center space-x-4 lg:space-x-8">
         {/* Logo */}
@@ -108,7 +108,7 @@ export function MenuBar() {
         <Button
           disabled={isLoading}
           onClick={handleButtonLoading}
-          className="w-auto bg-sky-500 rounded-full px-6 py-4 text-sm lg:px-12 lg:py-6 lg:text-lg"
+          className="w-auto bg-sky-500 rounded-full px-2 py-4 text-sm lg:px-7 lg:py-6 lg:text-lg"
         >
           {isLoading ? (
             <>

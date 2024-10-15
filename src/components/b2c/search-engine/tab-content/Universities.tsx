@@ -29,14 +29,12 @@ const Universities = () => {
         <CardTitle>Universities</CardTitle>
         <CardDescription>Click search when you&apos;re done.</CardDescription>
       </CardHeader>
-      <CardContent className="space-x-2 flex flex-col  space-y-4 md:flex-row md:space-x-4 md:space-y-0 items-center justify-start *:w-full">
+      <CardContent className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 *:w-full">
         <div className="space-y-1">
           <Label htmlFor="university-name">Search by university name</Label>
           <Input id="university-name" defaultValue="Pedro Duarte" />
         </div>
-
-        <p className="mx-6">Or</p>
-
+        <div className="relative max-w-fit lg:top-8 font-bold">Or </div>
         <div className="space-y-1">
           <Label htmlFor="study-destination">Select a study destination</Label>
           <Input id="study-destination" defaultValue="@peduarte" />
