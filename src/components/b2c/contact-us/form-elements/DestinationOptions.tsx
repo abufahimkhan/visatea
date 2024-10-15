@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import {
   Select,
   SelectContent,
@@ -10,30 +8,30 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { nanoid } from "nanoid";
 import { studyAbroadCountries } from "@/components/utils/data/StudyAbroadCountries";
+import { nanoid } from "nanoid";
 
-interface PropTypes {
-  label: string;
-  value: string;
-}
-
-const SelectOptions: React.FC<PropTypes> = ({ label, value }) => {
+const DestinationOptions = () => {
   return (
     <Select>
       <SelectTrigger>
         <SelectValue placeholder="Select" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="w-80">
         {Object.keys(studyAbroadCountries).map((region) => (
           <SelectGroup key={region}>
-            <SelectLabel>{region}</SelectLabel>
-            {/* Correct mapping over countries in each region */}
+            <SelectLabel className="text-sky-500 underline">
+              {region}
+            </SelectLabel>
             {studyAbroadCountries[
               region as keyof StudyAbroadCountriesInterface
             ].map(({ country, description }: any) => (
               <SelectItem key={nanoid()} value={country}>
-                {country} – {description}
+                <span className="bg-violet-500 text-white rounded-md p-1 text-sm">
+                  {country}
+                </span>
+                <span>–</span>
+                <span className="text-xs">{description}</span>
               </SelectItem>
             ))}
           </SelectGroup>
@@ -43,4 +41,4 @@ const SelectOptions: React.FC<PropTypes> = ({ label, value }) => {
   );
 };
 
-export default SelectOptions;
+export default DestinationOptions;

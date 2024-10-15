@@ -1,10 +1,10 @@
 import {
-  FiUser,
   FiBook,
   FiBriefcase,
   FiGlobe,
-  FiTrendingUp,
   FiHeart,
+  FiTrendingUp,
+  FiUser,
 } from "react-icons/fi";
 
 const servicesData = [

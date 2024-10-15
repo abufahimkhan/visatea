@@ -2,14 +2,21 @@ import Link from "next/link";
 import React from "react";
 import servicesData from "@/components/utils/data/ServiceData";
 import { nanoid } from "nanoid";
+import Image from "next/image";
+import { Images } from "@/components/utils/image";
 
 const Services = () => {
   return (
     <section className="flex items-center justify-center">
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 items-center justify-center">
-        <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
-          <div className="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
-            <h2 className="text-3xl font-bold sm:text-4xl">
+        <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 ">
+          <div className="relative mx-auto w-full h-full text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
+            <Image
+              src={Images.service_banner}
+              alt="Service Banner"
+              className="w-80 h-64 object-cover mx-auto"
+            />
+            <h2 className="text-3xl font-bold sm:text-4xl text-gray-700">
               Find your career path
             </h2>
             <p className="mt-4 text-gray-600">
