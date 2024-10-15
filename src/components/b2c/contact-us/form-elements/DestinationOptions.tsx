@@ -25,7 +25,7 @@ const DestinationOptions = () => {
             </SelectLabel>
             {studyAbroadCountries[
               region as keyof StudyAbroadCountriesInterface
-            ].map(({ country, description }: any) => (
+            ].map(({ country, description }) => (
               <SelectItem key={nanoid()} value={country}>
                 <span className="bg-violet-500 text-white rounded-md p-1 text-sm">
                   {country}
