@@ -33,13 +33,13 @@ const ContactForm = () => {
           <Input type="email" id="email" placeholder="Email" />
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-5">
+      <div className="grid grid-cols-1">
         <div>
           <Label htmlFor="email">Mobile number*</Label>
           <Input type="email" id="email" placeholder="Email" />
         </div>
       </div>
-      <div className="grid grid-cols-2 justify-evenly gap-5">
+      <div className="grid grid-cols-2 justify-evenly">
         <div>
           <Label htmlFor="email">Your preferred study destination*</Label>
           <DestinationOptions />
@@ -49,7 +49,7 @@ const ContactForm = () => {
           <DatePicker />
         </div>
       </div>
-      <div className="grid grid-cols-2 justify-evenly gap-5">
+      <div className="grid grid-cols-2 justify-evenly">
         <div>
           <Label htmlFor="email">Preferred mode of counselling*</Label>
           <CounsellingOptions />
@@ -59,7 +59,7 @@ const ContactForm = () => {
           <FundOptions />
         </div>
       </div>
-      <div className="grid grid-cols-2 justify-evenly gap-5">
+      <div className="grid grid-cols-2 justify-evenly">
         <div>
           <Label htmlFor="email">Preferred study level*</Label>
           <StudyLevelOptions />
@@ -69,7 +69,7 @@ const ContactForm = () => {
           <IDPOfficeOptions />
         </div>
       </div>
-      <div className="grid grid-cols-1 justify-evenly gap-5">
+      <div className="grid grid-cols-1 justify-evenly">
         <CheckBox
           label="I agree to VisaTea Terms and privacy policy"
           htmlFor="terms"
