@@ -1,8 +1,8 @@
+import { Header } from "@/components/b2c/headers/Header";
+import { MenuBar } from "@/components/b2c/headers/MenuBar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { MenuBar } from "@/components/b2c/headers/MenuBar";
-import { Header } from "@/components/b2c/headers/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
