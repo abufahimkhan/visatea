@@ -17,7 +17,7 @@ import {
 export function Header() {
   return (
     <header className="flex  justify-center mx-auto items-center px-5 py-1 shadow-2xl text-nowrap bg-slate-200">
-      <Menubar className="">
+      <Menubar>
         <MenubarMenu>
           <MenubarTrigger>Contact Us</MenubarTrigger>
           <MenubarContent>
