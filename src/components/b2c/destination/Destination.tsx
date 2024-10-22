@@ -16,7 +16,7 @@ const Destination = () => {
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
-            <h2 className="text-md lg:text-2xl font-bold text-gray-800 dark:text-white">
+            <h2 className="text-md lg:text-2xl font-bold text-gray-800">
               Six Enchanting Dream Destinations
             </h2>
           </div>
