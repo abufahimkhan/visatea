@@ -16,7 +16,7 @@ export default function Home() {
         title2="Search For Scholarships"
         title3="Search For Universities"
         title4="Search For Events"
-        title5="Search For Road Map"
+        title5="Search For Road-Map"
       />
       <SearchEngine />
       <Divider />

@@ -1,4 +1,4 @@
-import { Header } from "@/components/b2c/headers/header";
+import { Header } from "@/components/b2c/headers/Header";
 import { MenuBar } from "@/components/b2c/headers/MenuBar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
