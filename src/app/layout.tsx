@@ -1,4 +1,4 @@
-import { Header } from "@/components/b2c/headers/Header";
+import { HeaderMenu } from "@/components/b2c/headers/HeaderMenu";
 import { MenuBar } from "@/components/b2c/headers/MenuBar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        <HeaderMenu />
         <MenuBar />
         {children}
       </body>
