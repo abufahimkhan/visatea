@@ -16,8 +16,8 @@ import {
 
 export function HeaderMenu() {
   return (
-    <header className="flex  justify-center mx-auto items-center px-5 py-1 shadow-2xl text-nowrap bg-slate-200">
-      <Menubar>
+    <header className="flex justify-end mx-auto items-center px-5 py-1 shadow-2xl text-nowrap bg-slate-200">
+      <Menubar className="bg-slate-200 shadow-none">
         <MenubarMenu>
           <MenubarTrigger>Contact Us</MenubarTrigger>
           <MenubarContent>

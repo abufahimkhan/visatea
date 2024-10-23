@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import SelectOptions from "../../common/SelectOptions";
+import SelectOptions from "../../../common/SelectOptions";
 
 const Options = [
   "Self-Funded",
