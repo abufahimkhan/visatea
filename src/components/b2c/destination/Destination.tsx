@@ -7,12 +7,42 @@ import Link from "next/link";
 
 const Destination = () => {
   const CardImages = [
-    { src: Images.cardImage1, alt: "Image of a landscape", href: "/" },
-    { src: Images.cardImage2, alt: "Image of a city", href: "/" },
-    { src: Images.cardImage3, alt: "Image of a beach", href: "/" },
-    { src: Images.cardImage4, alt: "Image of mountains", href: "/" },
-    { src: Images.cardImage5, alt: "Image of a forest", href: "/" },
-    { src: Images.cardImage6, alt: "Image of a sunset", href: "/" },
+    {
+      src: Images.cardImage1,
+      alt: "Image of a landscape",
+      href: "/",
+      title: "Australia",
+    },
+    {
+      src: Images.cardImage2,
+      alt: "Image of a city",
+      href: "/",
+      title: "Canada",
+    },
+    {
+      src: Images.cardImage3,
+      alt: "Image of a beach",
+      href: "/",
+      title: "Ireland",
+    },
+    {
+      src: Images.cardImage4,
+      alt: "Image of mountains",
+      href: "/",
+      title: "New Zealand",
+    },
+    {
+      src: Images.cardImage5,
+      alt: "Image of a forest",
+      href: "/",
+      title: "United Kingdom",
+    },
+    {
+      src: Images.cardImage6,
+      alt: "Image of a sunset",
+      href: "/",
+      title: "United States",
+    },
   ];
 
   return (
@@ -35,6 +65,9 @@ const Destination = () => {
         >
           <Link href={content.href}>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <h1 className="relative max-w-fit p-2 text-center rounded-lg top-12 left-3 text-white text-sm font-bold bg-black">
+                {content.title}
+              </h1>
               <Image
                 src={content.src}
                 alt={content.alt}
