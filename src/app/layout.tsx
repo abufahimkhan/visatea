@@ -2,7 +2,7 @@ import { HeaderMenu } from "@/components/b2c/headers/HeaderMenu";
 import { MenuBar } from "@/components/b2c/headers/MenuBar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "@/app/styles/globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

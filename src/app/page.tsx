@@ -11,18 +11,13 @@ export default function Home() {
   return (
     <div className="">
       <Carousel />
-      <TitleAnimated
-        title="Search For Courses"
-        title2="Search For Scholarships"
-        title3="Search For Universities"
-        title4="Search For Events"
-        title5="Search For Road-Map"
-      />
+      <TitleAnimated title="Search For Courses" />
       <SearchEngine />
       <Divider />
       <Services />
-      <Divider title="Contact for your Scope" />
+      <TitleAnimated title="Contact for your Scope" />
       <ContactUs />
+      <TitleAnimated title="Six dream destinations" />
       <Destination />
       <Footer />
     </div>
