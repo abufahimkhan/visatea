@@ -6,6 +6,8 @@ import Destination from "@/components/b2c/destination/Destination";
 import Footer from "@/components/b2c/footer/Footer";
 import { SearchEngine } from "@/components/b2c/search-engine/SearchEngine";
 import Services from "@/components/b2c/services/Services";
+import SignInForm from "@/components/auth/SignInForm";
+import SignupForm from "@/components/auth/SignupForm";
 
 export default function Home() {
   return (
