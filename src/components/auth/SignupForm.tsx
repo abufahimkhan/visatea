@@ -61,8 +61,8 @@ const SignupForm = () => {
         agreementCommunication: values.agreementCommunication,
       });
       console.log("Signup successful:", response.data);
-    } catch (error: any) {
-      console.error("Signup error:", error.response?.data || error.message);
+    } catch (error: unknown) {
+      console.error("Signup error:", error);
     }
     console.log("Values", values);
   };
