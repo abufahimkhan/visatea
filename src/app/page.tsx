@@ -1,11 +1,11 @@
 import Carousel from "@/components/b2c/banners/Carousel";
-import Divider from "@/components/common/Divider";
-import TitleAnimated from "@/components/common/TitleAnimated";
 import ContactUs from "@/components/b2c/contact-us/ContactUs";
 import Destination from "@/components/b2c/destination/Destination";
 import Footer from "@/components/b2c/footer/Footer";
 import { SearchEngine } from "@/components/b2c/search-engine/SearchEngine";
 import Services from "@/components/b2c/services/Services";
+import Divider from "@/components/common/Divider";
+import TitleAnimated from "@/components/common/TitleAnimated";
 
 export default function Home() {
   return (

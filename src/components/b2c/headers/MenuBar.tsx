@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Importing mobile icons for open/close
 import { Button } from "../../ui/button";
 import { Images } from "../../utils/image";
+import Link from "next/link";
 
 export function MenuBar() {
   const [isLoading, setIsLoading] = useState(false);
@@ -53,12 +54,16 @@ export function MenuBar() {
       {/* Logo and Free Advice Button */}
       <div className="flex items-center space-x-4 lg:space-x-8">
         {/* Logo */}
-        <Image
-          src={Images.logo}
-          alt="Logo"
-          loading="lazy"
-          className="relative bottom-4 w-24 lg:w-36 h-auto"
-        />
+        <Link href="/">
+          <span>
+            <Image
+              src={Images.logo}
+              alt="Logo"
+              loading="lazy"
+              className="relative bottom-4 w-24 lg:w-36 h-auto"
+            />
+          </span>
+        </Link>
 
         {/* Menubar - Hidden on small devices, visible on larger screens */}
         <Menubar
