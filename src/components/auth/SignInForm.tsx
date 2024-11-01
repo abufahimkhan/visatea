@@ -40,7 +40,7 @@ const SignInForm = () => {
 
       localStorage.setItem("token-", token);
       console.log("Login successful, token:", token);
-    } catch ({ error }: any) {
+    } catch (error: any) {
       console.error(
         "Login failed:",
         error?.response?.data || error?.message || "User not found!"
